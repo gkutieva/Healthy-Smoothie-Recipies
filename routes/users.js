@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var usersCtrl = require('../controllers/users');
+var isLoggedIn = require('../config/auth');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', usersCtrl.index);
 
 module.exports = router;
