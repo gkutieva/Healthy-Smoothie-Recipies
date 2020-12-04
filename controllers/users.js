@@ -7,6 +7,6 @@ module.exports = {
 
 function index(req, res) {
   User.find({}, function(err, users) {
-    res.render('users/index', {title: 'Recipies', users});
+    res.render('users/index', {title: 'Healthy Smoothie Recipes', users});
   });
 }
