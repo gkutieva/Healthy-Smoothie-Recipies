@@ -13,6 +13,7 @@ function index(req, res) {
 };
 
 function create(req, res) {
+    req.body.user = req.user._id;
     const recipe = new Recipe(req.body);
     recipe.save(function(err) {
         if (err) return res.render('recipes/new');
