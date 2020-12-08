@@ -10,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
     Recipe.find({}, function(err, recipe) {
-        res.render(`recipe/index`, {title: 'home', recipe});
+        res.render(`recipes/index`, {title: 'home', recipe});
     });
 };
 

@@ -7,26 +7,75 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <a href="/recipes/">Smoothie Recipes</a> |
     <a href="/recipes/new">Add Recipe</a>
     <h1>All Recipes</h1>
     <h2>Organic, healthy, delicious</h2>
     <table id="list">
         <thead>
             <tr>
-                <th>BOOST PACK</th>
-                <th>CLASSIC</th>
-                <th>PLANT BASED</th>
+                <div class="first">
+                    <p>BOOST ACAI SMOOTHIE</span><br />
+                    <small>size medium acai antioxidant smoothie</small></p>
+                    <p>INGREDIENTS AND INSTRUCTIONS</p>
+                    <small>4 tablespoons of acai powder
+                        2 frozen bananas (you could get away with only one)
+                        1/2 cup frozen strawberries
+                        1/2 cup frozen raspberries
+                        1 tablespoon of hemp seeds
+                        1 cup of liquid (I typically use water or almond milk)
+                        Blend together all of the ingredients in a blender. ENJOY!
+                    </small>
+
+                  </div>
+                <div class="second">
+                    <p>CLASSIC MANGO SMOOTHIE</span><br />
+                    <small>size medium mango a-go-go smoothie</small></p>
+                    <p>INGREDIENTS AND INSTRUCTIONS</p>
+                    <small>1 cup ice cubes
+                        2 cups frozen mango chunks
+                        ½ cup banana slices, about 1 medium banana
+                        ½ cup plain Greek yogurt
+                        ¾ cup orange juice
+                        1 teaspoon honey, optional, plus more as desired
+                        Blend together all of the ingredients in a blender. ENJOY!
+                    </small>
+                  </div>
+                <div class="third">
+                    <p>GREEN SMOOTHIE</span><br />
+                    <small>size medium apples and greens smoothie</small></p>
+                    <p>INGREDIENTS AND INSTRUCTIONS</p>
+                    <small>1 cup (packed) baby spinach
+                        3/4 cup unsweetened, plain almond milk or water, divided (plus more to thin if necessary)
+                        1 small frozen banana (or about 1/2 cup of frozen banana slices)
+                        1/2 cup frozen pineapple chunks (or use mango, peaches or more banana)
+                        1/2 cup diced fresh apple (about 1/2 an apple; I used a Granny Smith Apple)
+                        1 tablespoon fresh lemon juice
+                        1 tablespoon honey (or other liquid sweetener like maple syrup or agave), or to taste
+                        Handful of ice cubes, optional
+                        Blend together all of the ingredients in a blender. ENJOY!
+                    </small>
+                  </div>
             </tr>
         </thead>
+        <form action="/recipes/<%= recipe._id %>/comments" method="POST">
+            <input name="text">
+            <button type="submit">ADD COMMENT</button>
+          </form>
+          <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+            <input name="text" value="<%= recipe.text %>">
+            <button type="submit">UPDATE COMMENT</button>
+          </form>
+          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+            <button type="submit">DELETE COMMENT</button>
+          </form>
         <tbody>
-            <% smoothies.forEach(function(s) { %>
+            <% recipe.forEach(function(s) { %>
             <tr>
                 <td><%= s.name %></td>
                 <td><%= s.image %></td>
                 <td><%= s.recipe %></td>
                 <td><%= s.description %></td>
-                <td><a href="/recipes/<%= f._id %>">DETAILS</a></td>
+                <td><a href="/recipes/<%= s._id %>">DETAILS</a></td>
             </tr>
             <% }); %>
         </tbody>
