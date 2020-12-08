@@ -18,8 +18,8 @@ function create(req, res) {
 }
 
 function deleteReview(req, res, next) {
-    Review.findOne({'reviews._id': req.params.id})
-      .then(function(review) {
+    Recipe.findOne({'reviews._id': req.params.id})
+      .then(function(recipe) {
         const review = recipe.reviews.id(req.params.id);
         // logged in user only for can create reviews
         if (!review.user.equals(req.user._id)) return res.redirect(`/reviews/${review._id}`);

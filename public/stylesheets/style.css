@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/Guide-to-Healthy-Smoothie-Recipes.png");
 }
 
 a {
@@ -8,6 +9,10 @@ a {
 }
 
 .login img {
-  height: 30px;
+  height: 20px;
+}
+
+.logout img {
+  height: 20px;
 }
 

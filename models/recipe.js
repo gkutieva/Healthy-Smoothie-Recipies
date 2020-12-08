@@ -10,14 +10,14 @@ const reviewSchema = new Schema({
         type: Number,
         min: 1,
         max: 5
-    }
+    },
 
     comments: {
         type: String
 
-    }, {
-        timestamps: true
-});
+    }, 
+        
+}, {timestamps: true});
    
 
 
@@ -41,6 +41,7 @@ const recipeSchema = new mongoose.Schema({
         type: String, 
         required: true 
     },
+    reviews: [reviewSchema],
 
     user: {type: mongoose.Schema.ObjectId, ref: 'User'}
   });

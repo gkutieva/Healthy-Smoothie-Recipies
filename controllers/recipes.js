@@ -4,6 +4,8 @@ module.exports = {
     index,
     create,
     new: newRecipe,
+    show,
+    update
 }
 
 function index(req, res) {
@@ -24,3 +26,18 @@ function create(req, res) {
 function newRecipe(req, res) {
     res.render('recipes/new');
 }
+
+function show(req, res) {
+    Recipe.findById(req.params.id)
+   
+  }
+
+  function update(req, res) {
+    Recipe.findOne({'comments._id' : req.params.id})
+    .then(function(recipe) {
+        comments = recipe.comments.id(req.params.id)
+        comments.content = req.body.content;
+        recipe.save()
+        res.redirect(`/recipes/${recipe._id}`)
+    })
+  }
