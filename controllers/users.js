@@ -1,12 +1,12 @@
 const User = require('../models/user');
 
 module.exports = {
-  index,
-
+  index,  
 };
 
 function index(req, res) {
   User.find({}, function(err, users) {
-    res.render('users/index', {title: 'Healthy Smoothie Recipes', users});
+    res.render('users/index', {title: '', users});
   });
 }
+

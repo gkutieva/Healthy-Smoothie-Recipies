@@ -1,33 +1,13 @@
 <%- include('../partials/header') %>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smoothies</title>
-<link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
-<a href="/recipes/">Smoothie Recipes</a> |
-<a href="/recipes/new">Add Recipe</a>
-<h1>All Recipes</h1>
-<h2>Organic, healthy, delicious</h2>
-<table id="list">
-    <thead>
-        <tr>
-            <th>BOOST PACK</th>
-            <th>CLASSIC</th>
-            <th>PLANT BASED</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% smoothies.forEach(function(s) { %>
-        <tr>
-            <td><%= s.name %></td>
-            <td><%= s.image %></td>
-            <td><%= s.recipe %></td>
-            <td><%= s.description %></td>
-            <td><a href="/recipes/<%= f._id %>">DETAILS</a></td>
-        </tr>
-        <% }); %>
-    </tbody>
-</table>
+<p>INGREDIENTS AND INSTRUCTIONS</p>
+    <small>4 tablespoons of acai powder
+          2 frozen bananas (you could get away with only one)
+         1/2 cup frozen strawberries
+         1/2 cup frozen raspberries
+         1 tablespoon of hemp seeds
+         1 cup of liquid (I typically use water or almond milk)
+         Blend together all of the ingredients in a blender. ENJOY!
+    </small>
+
 
 <%- include('../partials/footer') %>

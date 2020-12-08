@@ -1,6 +1,6 @@
 body {
   padding: 20px;
-  font: 14px helvetica;
+  font: 14px fantasy;
   margin: 0 auto;
 }
 
@@ -14,16 +14,6 @@ a {
 
 .logout img {
   height: 20px;
-}
-
-.first{
-  background-image: url("https://imgur.com/S9j4tXe.jpg");
-}
-.second{
-  background-image: url("https://imgur.com/mfJCZi3.jpg");
-}
-.third{
-  background-image: url("https://imgur.com/qXaIwpv.jpg");
 }
 
 h1 {
@@ -43,4 +33,6 @@ p {
   line-height: 24px;
 }
 
-
+.smoothies img{
+  size: 350px;
+}

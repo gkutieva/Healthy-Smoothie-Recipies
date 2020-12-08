@@ -2,12 +2,11 @@ const Recipe = require("../models/recipe");
 
 module.exports = {
     create,
-    update,
     delete: deleteComment
 }
 
 function create(req, res) {
-    Recipe.findById(req.params.id, function(err, book) {
+    Recipe.findById(req.params.id, function(err, recipe) {
       req.body.userId = req.user._id;
       req.body.userName = req.user.name;
       recipe.comments.push(req.body);
@@ -17,19 +16,8 @@ function create(req, res) {
     });
   }
 
-function update(req, res) {
-    Recipe.findOne({'comments._id': req.params.id}, function(err, book) {
-      const commentSubdoc = recipe.comments.id(req.params.id);
-      if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
-      commentSubdoc.text = req.body.text;
-      recipe.save(function(err) {
-        res.redirect(`/recipes/${recipe._id}`);
-      });
-    });
-}
-
 function deleteComment(req, res) {
-    Recipe.findOne({'comments._id': req.params.id}, function(err, book) {
+    Recipe.findOne({'comments._id': req.params.id}, function(err, recipe) {
       const commentSubdoc = book.comments.id(req.params.id);
       if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
       commentSubdoc.remove();

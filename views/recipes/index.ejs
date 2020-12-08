@@ -7,7 +7,8 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <a href="/recipes/new">Add Recipe</a>
+    <a href="/recipes/new">Add Recipe</a> |
+    <a href="/">Home</a>
     <h1>All Recipes</h1>
     <h2>Organic, healthy, delicious</h2>
     <table id="list">
@@ -16,20 +17,13 @@
                 <div class="first">
                     <p>BOOST ACAI SMOOTHIE</span><br />
                     <small>size medium acai antioxidant smoothie</small></p>
-                    <p>INGREDIENTS AND INSTRUCTIONS</p>
-                    <small>4 tablespoons of acai powder
-                        2 frozen bananas (you could get away with only one)
-                        1/2 cup frozen strawberries
-                        1/2 cup frozen raspberries
-                        1 tablespoon of hemp seeds
-                        1 cup of liquid (I typically use water or almond milk)
-                        Blend together all of the ingredients in a blender. ENJOY!
-                    </small>
-
+                    <img src="https://imgur.com/S9j4tXe.png" alt="acai smoothie" style="width: 50%;">
+                    <button>VIEW RECIPE</button>
                   </div>
                 <div class="second">
                     <p>CLASSIC MANGO SMOOTHIE</span><br />
                     <small>size medium mango a-go-go smoothie</small></p>
+                    <img src="https://imgur.com/mfJCZi3.png" alt="mango smoothie" style="width: 50%;">
                     <p>INGREDIENTS AND INSTRUCTIONS</p>
                     <small>1 cup ice cubes
                         2 cups frozen mango chunks
@@ -43,6 +37,7 @@
                 <div class="third">
                     <p>GREEN SMOOTHIE</span><br />
                     <small>size medium apples and greens smoothie</small></p>
+                    <img src="https://imgur.com/qXaIwpv.png" alt="green smoothie" style="width: 50%;">
                     <p>INGREDIENTS AND INSTRUCTIONS</p>
                     <small>1 cup (packed) baby spinach
                         3/4 cup unsweetened, plain almond milk or water, divided (plus more to thin if necessary)
@@ -60,10 +55,6 @@
         <form action="/recipes/<%= recipe._id %>/comments" method="POST">
             <input name="text">
             <button type="submit">ADD COMMENT</button>
-          </form>
-          <form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
-            <input name="text" value="<%= recipe.text %>">
-            <button type="submit">UPDATE COMMENT</button>
           </form>
           <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
             <button type="submit">DELETE COMMENT</button>
