@@ -1,13 +1,21 @@
 <%- include('../partials/header') %>
-<p>INGREDIENTS AND INSTRUCTIONS</p>
-    <small>4 tablespoons of acai powder
-          2 frozen bananas (you could get away with only one)
-         1/2 cup frozen strawberries
+<p>BOOST ACAI SMOOTHIE</span><br />
+    <small>size medium acai antioxidant smoothie</small></p>
+    <p>INGREDIENTS AND INSTRUCTIONS</p>
+ <small>4 tablespoons of acai powder
+         2 frozen bananas (you could get away with only one)
+        1/2 cup frozen strawberries
          1/2 cup frozen raspberries
          1 tablespoon of hemp seeds
-         1 cup of liquid (I typically use water or almond milk)
+        1 cup of liquid (I typically use water or almond milk)
          Blend together all of the ingredients in a blender. ENJOY!
-    </small>
-
+ </small>
+    <form action="/recipes/<%= recipe._id %>/reviews" method="POST">
+        <input name="text">
+        <button type="submit">ADD REVIEW</button>
+      </form>
+      <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
+        <button type="submit">DELETE REVIEW</button>
+      </form>
 
 <%- include('../partials/footer') %>

@@ -11,11 +11,6 @@ const reviewSchema = new Schema({
         min: 1,
         max: 5
     },
-
-    comments: {
-        type: String
-
-    }, 
         
 }, {timestamps: true});
    
@@ -24,11 +19,6 @@ const reviewSchema = new Schema({
 const recipeSchema = new mongoose.Schema({
     name: { 
         type: String,
-        required: true 
-    },
-
-    image: { 
-        type: String, 
         required: true 
     },
 

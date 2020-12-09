@@ -1,13 +1,12 @@
 <%- include('../partials/header') %>
-<h1>Add New Delicious Recipe/s</h1>
 <form id="new-form" action="/recipes" method="POST">
     <label>Name:</label>
     <input type="text" name="name">
-    <label>Ingredients:</label>
-    <input type="text" name="ingredients">
-    <label>How to make:</label>
-    <input type="text" name="how to make">
-    <label>Image:</label>
-    <input type="img" name="image">
+    <label>Recipe:</label>
+    <input type="text" name="recipe">
+    <label>Description:</label>
+    <input type="text" name="description">
+    <button type="submit">ADD RECIPE</button>
 </form>
+
 <%- include('../partials/footer') %>

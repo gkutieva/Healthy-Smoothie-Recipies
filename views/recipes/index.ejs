@@ -14,56 +14,15 @@
     <table id="list">
         <thead>
             <tr>
-                <div class="first">
-                    <p>BOOST ACAI SMOOTHIE</span><br />
-                    <small>size medium acai antioxidant smoothie</small></p>
-                    <img src="https://imgur.com/S9j4tXe.png" alt="acai smoothie" style="width: 50%;">
-                    <button>VIEW RECIPE</button>
-                  </div>
-                <div class="second">
-                    <p>CLASSIC MANGO SMOOTHIE</span><br />
-                    <small>size medium mango a-go-go smoothie</small></p>
-                    <img src="https://imgur.com/mfJCZi3.png" alt="mango smoothie" style="width: 50%;">
-                    <p>INGREDIENTS AND INSTRUCTIONS</p>
-                    <small>1 cup ice cubes
-                        2 cups frozen mango chunks
-                        ½ cup banana slices, about 1 medium banana
-                        ½ cup plain Greek yogurt
-                        ¾ cup orange juice
-                        1 teaspoon honey, optional, plus more as desired
-                        Blend together all of the ingredients in a blender. ENJOY!
-                    </small>
-                  </div>
-                <div class="third">
-                    <p>GREEN SMOOTHIE</span><br />
-                    <small>size medium apples and greens smoothie</small></p>
-                    <img src="https://imgur.com/qXaIwpv.png" alt="green smoothie" style="width: 50%;">
-                    <p>INGREDIENTS AND INSTRUCTIONS</p>
-                    <small>1 cup (packed) baby spinach
-                        3/4 cup unsweetened, plain almond milk or water, divided (plus more to thin if necessary)
-                        1 small frozen banana (or about 1/2 cup of frozen banana slices)
-                        1/2 cup frozen pineapple chunks (or use mango, peaches or more banana)
-                        1/2 cup diced fresh apple (about 1/2 an apple; I used a Granny Smith Apple)
-                        1 tablespoon fresh lemon juice
-                        1 tablespoon honey (or other liquid sweetener like maple syrup or agave), or to taste
-                        Handful of ice cubes, optional
-                        Blend together all of the ingredients in a blender. ENJOY!
-                    </small>
-                  </div>
+                <th>Name</th>
+                <th>Recipe</th>
+                <th>Description</th>
             </tr>
         </thead>
-        <form action="/recipes/<%= recipe._id %>/comments" method="POST">
-            <input name="text">
-            <button type="submit">ADD COMMENT</button>
-          </form>
-          <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-            <button type="submit">DELETE COMMENT</button>
-          </form>
         <tbody>
             <% recipe.forEach(function(s) { %>
             <tr>
                 <td><%= s.name %></td>
-                <td><%= s.image %></td>
                 <td><%= s.recipe %></td>
                 <td><%= s.description %></td>
                 <td><a href="/recipes/<%= s._id %>">DETAILS</a></td>

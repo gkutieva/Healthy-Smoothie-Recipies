@@ -22,10 +22,10 @@ function deleteReview(req, res, next) {
       .then(function(recipe) {
         const review = recipe.reviews.id(req.params.id);
         // logged in user only for can create reviews
-        if (!review.user.equals(req.user._id)) return res.redirect(`/reviews/${review._id}`);
+        if (!review.user.equals(req.user._id)) return res.redirect(`/recipes/${recipe._id}`);
         review.remove();
-        review.save().then(function() {
-          res.redirect(`/reviews/${review._id}`);
+        recipe.save().then(function() {
+          res.redirect(`/recipes/${recipe._id}`);
         }).catch(function(err) {
         //error
         return next(err);

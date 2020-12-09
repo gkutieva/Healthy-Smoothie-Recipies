@@ -3,7 +3,7 @@ const router = express.Router();
 const reviewsCtrl = require('../controllers/reviews');
 const isLoggedIn = require('../config/auth');
 
-router.post('/reviews', isLoggedIn, reviewsCtrl.create);
+router.post('/reviews/:id', isLoggedIn, reviewsCtrl.create);
 router.delete('/reviews/:id', isLoggedIn, reviewsCtrl.delete);
 
 

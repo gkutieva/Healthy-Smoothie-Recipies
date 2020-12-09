@@ -10,25 +10,29 @@ module.exports = {
 
 function index(req, res) {
     Recipe.find({}, function(err, recipe) {
-        res.render(`recipes/index`, {title: 'home', recipe});
+        res.render(`recipes/index`, {title: 'Home', recipe});
     });
 };
 
 function create(req, res) {
-    req.body.user = req.user._id;
-    const recipe = new Recipe(req.body);
-    recipe.save(function(err) {
-        if (err) return res.render('recipes/new');
-        res.redirect('/recipes');
-    });
+    for (let key in req.body) {
+        if (req.body[key] === '') delete req.body[key];
+    }
+      const recipe = new Recipe(req.body);
+      recipe.save(function(err) {
+        if (err) return res.redirect('/recipes/new');
+        res.redirect(`/recipes/${recipe._id}`);
+      });
 }
 
 function newRecipe(req, res) {
-    res.render('recipes/new');
+    res.render('recipes/new', {title: 'New Recipe'});
 }
 
 function show(req, res) {
-    Recipe.findById(req.params.id)
+    Recipe.findById(req.params.id, function(err, recipe) {
+        res.render('recipes/show', {title: 'Recipe Details', recipe});
+    });
    
   }
 
