@@ -5,6 +5,7 @@ module.exports = {
     create,
     new: newRecipe,
     show,
+    edit,
     update
 }
 
@@ -40,14 +41,23 @@ function show(req, res) {
     });
   }
 
+  function edit(req, res) {
+    Recipe.findOne({_id: req.params.id, user: req.user._id}, function(err, recipe) {
+      if (err || !recipe) return res.redirect('/recipes');
+      res.render('recipes/edit', {title: 'Edit Recipe', recipe});
+    });
+  }
+
   function update(req, res) {
     Recipe.findOneAndUpdate(
-      {_id: req.params.id, userRecommending: req.user._id},
+      {_id: req.params.id, user: req.user._id},
       req.body,
       {new: true},
       function(err, recipe) {
         if (err || !recipe) return res.redirect('/recipes');
-        res.redirect(`recipes/${recipe._id}`);
+        res.redirect(`/recipes/${recipe._id}`);
       }
     );
   }
+
+  

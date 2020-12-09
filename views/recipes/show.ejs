@@ -4,6 +4,7 @@
 <h3>INGREDIENTS AND INSTRUCTIONS</h3>
 <div><%= recipe.recipe %></div>
 <div><%= recipe.description %></div>
+<a href="/recipes/<%= recipe._id %>/edit">EDIT</a>
 <hr>
 <h3>REVIEWS</h3>
 <ul>
@@ -13,8 +14,9 @@
       <p><%= r.content %></p>
       <p>Rating: <%= r.rating %></p>
       <% if (user && r.user._id.equals(user._id)) { %>
-        <form action="/recipes/<%= recipe._id %>?_method=DELETE" method="POST">
-          <button type="submit">DELETE</button>
+        <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+            <button type="submit">DELETE</button>
+          </form>  
         </form>
       <% } %>
     </li>
