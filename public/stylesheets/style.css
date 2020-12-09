@@ -2,10 +2,11 @@ body {
   padding: 20px;
   font: 14px fantasy;
   margin: 0 auto;
+  background-color: pink;
 }
 
 a {
-  color: #00B7FF;
+  color: #181688;
 }
 
 .login img {
@@ -35,4 +36,29 @@ p {
 
 .smoothies img{
   size: 350px;
+}
+
+form {
+  display: inline;
+	flex-direction: column;
+	justify-content: left;
+	align-items: left;
+}
+
+button {
+  background-color: purple;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+}
+
+  .list{
+  display: flex;
+  gap: 20px;
+  flex-direction: column auto(3);
+  justify-content: space-between;
 }
