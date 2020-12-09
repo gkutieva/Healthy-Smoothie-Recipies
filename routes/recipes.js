@@ -7,7 +7,7 @@ var reviewsCtrl = require('../controllers/reviews');
 router.get('/', recipeCtrl.index);
 router.post('/', isLoggedIn, recipeCtrl.create);
 router.get('/new', isLoggedIn, recipeCtrl.new);
-router.get('/:id', recipeCtrl.show);
+router.get('/:id', isLoggedIn, recipeCtrl.show);
 router.post('/:id/reviews', isLoggedIn, reviewsCtrl.create);
 router.get('/:id/edit', isLoggedIn, recipeCtrl.edit);
 router.put('/:id', isLoggedIn, recipeCtrl.update);
