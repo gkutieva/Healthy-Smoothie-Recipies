@@ -9,16 +9,19 @@ module.exports = {
 }
 
 function index(req, res) {
-    Recipe.find({}, function(err, recipe) {
-        res.render(`recipes/index`, {title: 'Home', recipe});
+    Recipe.find({})
+      .populate('user')
+      .exec(function (err, recipes) {
+      res.render(`recipes/index`, { title: 'Home', recipes });
     });
-};
+  };
 
 function create(req, res) {
     for (let key in req.body) {
         if (req.body[key] === '') delete req.body[key];
     }
       const recipe = new Recipe(req.body);
+      recipe.user = req.user._id;
       recipe.save(function(err) {
         if (err) return res.redirect('/recipes/new');
         res.redirect(`/recipes/${recipe._id}`);
@@ -30,10 +33,11 @@ function newRecipe(req, res) {
 }
 
 function show(req, res) {
-    Recipe.findById(req.params.id, function(err, recipe) {
-        res.render('recipes/show', {title: 'Recipe Details', recipe});
+    Recipe.findById(req.params.id)
+    .populate('user')
+    .exec(function (err, recipe) {
+      res.render('recipes/show', { title: 'Recipe Details', recipe });
     });
-   
   }
 
   function update(req, res) {
