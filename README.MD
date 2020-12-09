@@ -18,7 +18,7 @@ The website that allows you to dig deeper into healthy smoothies! This side allo
 
 # GETTING STARTED:  
 [Trello board](https://trello.com/b/TQc6ItJf/healthy-smoothie-recipies)
-[Click here to browse the app](http://localhost:3000/users)
+[Click here to browse the app](https://healthy-smoothie-recipes.herokuapp.com/users)
 
 ### NEXT STEPS: 
 * Improving on the CSS 
