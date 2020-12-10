@@ -1,11 +1,11 @@
 <%- include('../partials/header') %>
-<form action="/recipes/<%= recipe._id %>?_method=PUT" method="POST">
+<form action="/recipes" method="POST">
     <label>Name:</label>
-    <input type="text" name="name" value="<%= recipe.name %>">
+    <input type="text" name="name">
     <label>Recipe:</label>
-    <input type="text" name="recipe" value="<%= recipe.recipe %>">
+    <input type="text" name="recipe">
     <label>Description:</label>
-    <input type="text" name="description" value="<%= recipe.description %>">
+    <input type="text" name="description">
     <button type="submit">ADD RECIPE</button>
 </form>
 <%- include('../partials/footer') %>
