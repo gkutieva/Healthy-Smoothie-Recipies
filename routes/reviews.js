@@ -8,3 +8,4 @@ router.delete('/reviews/:id', isLoggedIn, reviewsCtrl.delete);
 
 
 module.exports = router;
+
