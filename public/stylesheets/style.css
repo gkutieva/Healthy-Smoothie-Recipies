@@ -2,7 +2,7 @@ body {
   padding: 20px;
   font: 14px fantasy;
   margin: 0 auto;
-  background-color: pink;
+  background-color: rgb(192, 255, 234);
 }
 
 a {
@@ -46,7 +46,7 @@ form {
 }
 
 button {
-  background-color: purple;
+  background-color: rgb(51, 179, 94);
   border: none;
   color: white;
   padding: 15px 32px;
